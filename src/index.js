@@ -5,19 +5,23 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 // Components
-import ReactUMD, { Button } from '../index.js'
+import ReactUMD, { Button, Input } from '../index.js'
 
 export class App extends Component {
   onClick () {
-    alert('hello');
+    alert('test');
   }
 
   render () {
     return (
-      <main>
-        React App
-        <Button onClick={this.onClick} text={"hello"} />
-      </main>
+      {//<main>
+        // <Button onClick={this.onClick} text={"test"}/>
+        // <Input placeholder={"First name"}/>
+        // <Input placeholder={"Middle initial"}/>
+        // <Input placeholder={"Last name"}/>
+      //</main>
+      }
+
     )
   }
 }

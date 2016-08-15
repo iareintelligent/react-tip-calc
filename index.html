@@ -3,10 +3,55 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React Component Library</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
 </head>
 <body>
-  Testing UI
   <div id="app"></div>
+
+  <div id="calculator">
+    <div id="calcMods">
+      <label>Bill</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon-1">$</span>
+        <input type="number" step=".01" class="form-control" id="bill" placeholder="0" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$">
+      </div>
+
+      <label>Tip %</label>
+      <div class="input-group xcrement">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-number minus">-</button>
+        </span>
+        <input type="number" step="1" class="form-control" placeholder="18" id="percent_tip" pattern="[0-9]+(\.[0-9]{0,2})?%?">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-number plus" >+</button></span>
+      </div>
+
+      <label># of people (numPeeps)</label>
+      <div class="input-group xcrement">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-number minus">-</button>
+        </span>
+        <input type="number" step="1" class="form-control" placeholder="1" id="numPeeps" pattern="[0-9]">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default btn-number plus" >+</button>
+        </span>
+      </div>
+    </div>
+
+    <div id="calcTots">
+      <div class="result">
+        <h3 class="result_text">Tip:</h3>
+        <h3 class="result_data" id="tip_amount"></h3>
+      </div>
+      <div class="result">
+        <h3 class="result_text">Total:</h3>
+        <h3 class="result_data" id="total"></h3>
+      </div>
+    </div>
+  </div>
+
   <script src="index.js"></script>
   <script src="static/bundle.js"></script>
 </body>
