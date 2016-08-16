@@ -11,7 +11,12 @@ class Input extends Component {
   render() {
     return (
       <div>
-        <input type="text" placeholder={this.props.placeholder}/>
+        <label>
+          {this.props.inputLabel}
+        </label>
+        <div>
+          <input type="number"/>
+        </div>
       </div>
     )
   }

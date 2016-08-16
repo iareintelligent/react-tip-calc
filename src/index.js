@@ -7,24 +7,37 @@ import ReactDOM from 'react-dom'
 // Components
 import ReactUMD, { Button, Input } from '../index.js'
 
-export class App extends Component {
-  onClick () {
-    alert('test');
-  }
+// export class App extends Component {
+//   onClick () {
+//     alert('test');
+//   }
+//
+//   render () {
+//     return (
+//       <main>
+//         React App
+//         <Button onClick={this.onClick} text={"testb"}/>
+//         <Input placeholder={"First name"}/>
+//         <Input placeholder={"Middle initial"}/>
+//         <Input placeholder={"Middle initial"}/>
+//       </main>
+//     )
+//   }
+// }
 
-  render () {
+export class UserVars extends Component {
+
+  render() {
     return (
-      {//<main>
-        // <Button onClick={this.onClick} text={"test"}/>
-        // <Input placeholder={"First name"}/>
-        // <Input placeholder={"Middle initial"}/>
-        // <Input placeholder={"Last name"}/>
-      //</main>
-      }
-
+      <div>
+        <Input inputLabel={"Bill"}/>
+        <Input inputLabel={"Tip"}/>
+        <Input inputLabel={"Num of People"}/>
+      </div>
     )
   }
 }
 
 // App entry point
-ReactDOM.render( <App /> , document.getElementById( 'app' ) )
+//ReactDOM.render( <App /> , document.getElementById( 'app' ) )
+ReactDOM.render( <UserVars />, document.getElementById( 'userVars' ) )
