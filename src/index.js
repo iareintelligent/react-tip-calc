@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 // Components
-import ReactUMD, { Button, Input } from '../index.js'
+import ReactUMD, { Button, Input, Result } from '../index.js'
 
 // export class App extends Component {
 //   onClick () {
@@ -38,6 +38,18 @@ export class UserVars extends Component {
   }
 }
 
+export class CalcOutput extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Result calcType={"Tip:"} calcResult={"$munny"}/>
+        <Result calcType={"Total:"} calcResult={"$total"}/>
+      </div>
+    )
+  }
+}
+
 // App entry point
 //ReactDOM.render( <App /> , document.getElementById( 'app' ) )
 ReactDOM.render( <UserVars />, document.getElementById( 'userVars' ) )
+ReactDOM.render( <CalcOutput />, document.getElementById( 'calcOutput' ) )
