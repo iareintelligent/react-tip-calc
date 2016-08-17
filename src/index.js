@@ -7,49 +7,40 @@ import ReactDOM from 'react-dom'
 // Components
 import ReactUMD, { Button, Input, Result } from '../index.js'
 
-// export class App extends Component {
-//   onClick () {
-//     alert('test');
-//   }
-//
-//   render () {
-//     return (
-//       <main>
-//         React App
-//         <Button onClick={this.onClick} text={"testb"}/>
-//         <Input placeholder={"First name"}/>
-//         <Input placeholder={"Middle initial"}/>
-//         <Input placeholder={"Middle initial"}/>
-//       </main>
-//     )
-//   }
-// }
-
-export class UserVars extends Component {
-
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tip: 0,
+      total: 0
+    };
+  }
   render() {
+    var { billValue, tipPct, splitValue } = this.props;
+    var { tip, total } = this.state;
     return (
-      <div>
-        <Input inputLabel={"Bill"}/>
-        <Input inputLabel={"Tip"}/>
-        <Input inputLabel={"Num of People"}/>
-      </div>
-    )
+      <section>
+        <div>
+          <Input id="bill" value={billValue} inputLabel={"Bill"} onChange={this.updateTotal.bind(this)} />
+          <Input id="percent-tip" value={tipPct} inputLabel={"Tip"} onChange={this.updateTotal.bind(this)} />
+          <Input id="split-num" value={splitValue} inputLabel={"Number of People"} onChange={this.updateTotal.bind(this)} />
+        </div>
+        <div>
+          <Result calcType={"Tip:"} calcResult={tip}></Result>
+          <Result calcType={"Total:"} calcResult={total}></Result>
+        </div>
+      </section>
+    );
+  }
+  updateTotal(){
+    debugger;
+    this.setState({tip: this.props.billValue *  this.props.tipPct/100});
+    this.setState({total: this.props.billValue + this.props.tip});
   }
 }
-
-export class CalcOutput extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Result calcType={"Tip:"} calcResult={"$munny"}/>
-        <Result calcType={"Total:"} calcResult={"$total"}/>
-      </div>
-    )
-  }
-}
+//props
+//state
 
 // App entry point
-//ReactDOM.render( <App /> , document.getElementById( 'app' ) )
-ReactDOM.render( <UserVars />, document.getElementById( 'userVars' ) )
-ReactDOM.render( <CalcOutput />, document.getElementById( 'calcOutput' ) )
+ReactDOM.render( <App billValue={0} tipPct={18} splitValue={0} /> ,
+   document.getElementById('app') )

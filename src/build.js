@@ -6,6 +6,6 @@
 // export ReactDOM from 'react-dom'
 
 // Components
-// export { default as Button } from './components/button/button'
+export { default as Button } from './components/button/button'
 export { default as Input } from './components/input/input'
 export { default as Result } from './components/result/result'
